@@ -8,8 +8,29 @@
     <title>Chord Chart</title>
   </head>
   <body>
+    <div class="container">
+      <div class="title-bar">Chord Chart</div>
+      <div class="index-container">
+        <div class="index-headers">
+          <div class="name">Name</div>
+          <div class="size">Size</div>
+          <div class="date">Date</div>
+        </div>
+        <div class="index-content" id="index-content" />
+      </div>
+    </div>
     <script>
-      window.location.href = location.origin + "/chord-chart";
+      (async () => {
+        const index = await fetch("./chord-chart/");
+        const dummy = document.createElement("dummy");
+        dummy.innerHTML = await index.text();
+        const wrapper = dummy.getElementsByTagName("ul");
+        if (wrapper.length > 0) {
+          wrapper.item(0)?.children.item(0)?.remove();
+          const indexContent = document.getElementById("index-content");
+          indexContent.appendChild(wrapper.item(0));
+        }
+      })();
     </script>
   </body>
 </html>
