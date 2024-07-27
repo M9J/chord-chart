@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="https://m9j.github.io/chord-chart/xmldef" xmlns="https://m9j.github.io/chord-chart/xmldef"
+    targetNamespace="https://M9J.github.io/chord-chart/xmldef"
+    xmlns="https://M9J.github.io/chord-chart/xmldef"
     elementFormDefault="qualified">
-    <xs:element name="chord-chart">
+    <xs:element name="ChordChart">
         <xs:complexType>
             <xs:choice maxOccurs="unbounded" minOccurs="0">
-                <xs:element name="keyWhite">
+                <xs:element name="KeyWhite">
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="xs:string">
@@ -16,7 +17,7 @@
                         </xs:simpleContent>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="keyBlack">
+                <xs:element name="KeyBlack">
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="xs:string">

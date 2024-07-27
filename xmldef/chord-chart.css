@@ -1,7 +1,12 @@
-chord-chart {
-    background: red;
+ChordChart {
+  background: red;
+  display: flex;
 }
 
-keyWhite {
-    background: blue;
+KeyWhite {
+  background: blue;
+  content: "&nbsp;";
+  display: block;
+  width: 100px;
+  height: 100px;
 }

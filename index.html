@@ -13,22 +13,43 @@
       <div class="index-container">
         <div class="index-headers">
           <div class="name">Name</div>
-          <div class="size">Size</div>
-          <div class="date">Date</div>
+          <div class="size"></div>
+          <div class="date"></div>
         </div>
         <div class="index-content" id="index-content" />
       </div>
     </div>
     <script>
       (async () => {
-        const index = await fetch("/chord-chart/");
-        const dummy = document.createElement("dummy");
-        dummy.innerHTML = await index.text();
-        const wrapper = dummy.getElementsByTagName("ul");
-        if (wrapper.length > 0) {
-          wrapper.item(0)?.children.item(0)?.remove();
-          const indexContent = document.getElementById("index-content");
-          indexContent.appendChild(wrapper.item(0));
+        const index = await fetch("/chord-chart/index.xml");
+        if (index) {
+          const indexText = await index.text();
+          const parsedIndex = new DOMParser().parseFromString(
+            indexText,
+            "application/xml"
+          );
+          if (!parsedIndex) throw new Error("parsedIndex failed");
+          const chordChartIndex =
+            parsedIndex.getElementsByTagName("chord-chart-index");
+          if (!chordChartIndex) throw new Error("chordChartIndex failed");
+          const chordsList = chordChartIndex.item(0).children;
+          if (chordsList.length > 0) {
+            const ul = document.createElement("ul");
+            for (let li of chordsList) {
+              const liNode = document.createElement("li");
+              const chordName = li.getAttribute("name");
+              liNode.innerHTML = `
+                <a href="${location.href}chord-chart/${chordName}.xml">
+                  <span class="name">${chordName}</span>
+                  <span class="size"></span>
+                  <span class="date"></span>
+                </a>
+              `;
+              ul.appendChild(liNode);
+            }
+            const indexContent = document.getElementById("index-content");
+            indexContent.appendChild(ul);
+          }
         }
       })();
     </script>

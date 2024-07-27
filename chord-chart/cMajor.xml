@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/xmldef/chord-chart.xsl"?>
 
-<chord-chart xmlns="https://m9j.github.io/chord-chart/xmldef"
+<ChordChart xmlns="https://M9J.github.io/chord-chart/xmldef"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="https://m9j.github.io/chord-chart/xmldef chord-chart.xsd">
-    <keyWhite note="C" isPressed="Y" />
-    <keyBlack note="C" />
-    <keyWhite note="D" />
-    <keyBlack note="D" />
-    <keyWhite note="E" isPressed="Y" />
-    <keyWhite note="F" />
-    <keyBlack note="F" />
-    <keyWhite note="G" isPressed="Y" />
-    <keyBlack note="G" />
-    <keyWhite note="A" />
-    <keyBlack note="A" />
-    <keyWhite note="B" />
-</chord-chart>
+    xsi:schemaLocation="https://M9J.github.io/chord-chart/xmldef chord-chart.xsd"
+>
+    <KeyWhite note="C" isPressed="Y" />
+    <KeyBlack note="C" />
+    <KeyWhite note="D" />
+    <KeyBlack note="D" />
+    <KeyWhite note="E" isPressed="Y" />
+    <KeyWhite note="F" />
+    <KeyBlack note="F" />
+    <KeyWhite note="G" isPressed="Y" />
+    <KeyBlack note="G" />
+    <KeyWhite note="A" />
+    <KeyBlack note="A" />
+    <KeyWhite note="B" />
+</ChordChart>
