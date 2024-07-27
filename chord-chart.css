@@ -1,0 +1,31 @@
+ChordChart {
+  background: red;
+  display: flex;
+  position: relative;
+}
+
+KeyWhite {
+  background: #fff;
+  content: "";
+  display: inline-flex;
+  width: 40px;
+  height: 100px;
+  position: relative;
+  z-index: 0;
+  margin-right: -10px;
+}
+
+KeyWhite:last-child {
+  margin-right: 0px;
+}
+
+KeyBlack {
+  background-color: #000;
+  content: "";
+  display: inline-flex;
+  width: 20px;
+  height: 75px;
+  position: relative;
+  margin-left: -10px;
+  z-index: 1;
+}

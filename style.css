@@ -16,11 +16,12 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  background-color: #666;
 }
 
 .title-bar {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
   padding: 8px;
   font-weight: 900;
 }
@@ -29,25 +30,33 @@ body {
   padding: 8px;
 }
 
-.index-headers {
-  padding: 8px;
-  background-color: #000;
-  color: #fff;
+.index-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  left: 5%;
+  position: relative;
+  background: white;
+  top: 5%;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .index-content {
-  padding: 8px 0px;
-}
-
-li,
-.index-headers {
-  display: flex;
-  width: 100%;
-  font-weight: bolder;
+  flex: 1;
+  flex-basis: 75vh;
+  box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.25);
+  overflow: auto;
 }
 
 li {
-  padding: 0px 8px;
+  display: flex;
+  width: 100%;
+  font-weight: bolder;
+  padding: 8px 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 8px;
 }
 
 li a {
@@ -61,4 +70,20 @@ li a {
 .size,
 .date {
   flex: 1;
+}
+
+.preview-container {
+  flex: 1;
+  display: flex;
+  padding: 8px;
+  background-color: #666;
+  min-height: 15vh;
+  max-height: 15vh;
+  overflow: auto;
+  min-width: 0;
+}
+
+.preview-window {
+  display: flex;
+  flex-direction: row;
 }

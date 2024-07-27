@@ -6,55 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chord-chart.css" />
+    <script src="script.js"></script>
     <base href="/chord-chart/" />
-    <title>Chord Chart</title>
+    <title>ChordChart</title>
   </head>
   <body>
     <div class="container">
-      <div class="title-bar">Chord Chart</div>
+      <div class="title-bar">ChordChart</div>
+      <div class="preview-container">
+        <div id="preview-window"></div>
+      </div>
       <div class="index-container">
-        <div class="index-headers">
-          <div class="name">Name</div>
-          <div class="size"></div>
-          <div class="date"></div>
-        </div>
-        <div class="index-content" id="index-content" />
+        <div class="index-content" id="index-content"></div>
       </div>
     </div>
-    <script>
-      (async () => {
-        const baseURL = location.href;
-        const index = await fetch(baseURL + "chord-chart/index.xml");
-        if (index) {
-          const indexText = await index.text();
-          const parsedIndex = new DOMParser().parseFromString(
-            indexText,
-            "application/xml"
-          );
-          if (!parsedIndex) throw new Error("parsedIndex failed");
-          const chordChartIndex =
-            parsedIndex.getElementsByTagName("chord-chart-index");
-          if (!chordChartIndex) throw new Error("chordChartIndex failed");
-          const chordsList = chordChartIndex.item(0).children;
-          if (chordsList.length > 0) {
-            const ul = document.createElement("ul");
-            for (let li of chordsList) {
-              const liNode = document.createElement("li");
-              const chordName = li.getAttribute("name");
-              liNode.innerHTML = `
-                <a href="${baseURL}chord-chart/${chordName}.xml">
-                  <span class="name">${chordName}</span>
-                  <span class="size"></span>
-                  <span class="date"></span>
-                </a>
-              `;
-              ul.appendChild(liNode);
-            }
-            const indexContent = document.getElementById("index-content");
-            indexContent.appendChild(ul);
-          }
-        }
-      })();
-    </script>
   </body>
 </html>
