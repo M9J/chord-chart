@@ -21,7 +21,7 @@
     </div>
     <script>
       (async () => {
-        const index = await fetch("/chord-chart/index.xml");
+        const index = await fetch(location.origin + "/chord-chart/index.xml");
         if (index) {
           const indexText = await index.text();
           const parsedIndex = new DOMParser().parseFromString(
