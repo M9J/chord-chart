@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chord-chart xmlns="http://example.com/xmldef"
+<chord-chart xmlns="https://m9j.github.io/chord-chart/xmldef"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://example.com/xmldef chord-chart.xsd">
+    xsi:schemaLocation="https://m9j.github.io/chord-chart/xmldef chord-chart.xsd">
     <keyWhite note="C" isPressed="Y" />
     <keyBlack note="C" />
     <keyWhite note="D" />

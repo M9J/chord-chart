@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://example.com/xmldef" xmlns="http://example.com/xmldef"
+    targetNamespace="https://m9j.github.io/chord-chart/xmldef" xmlns="https://m9j.github.io/chord-chart/xmldef"
     elementFormDefault="qualified">
     <xs:element name="chord-chart">
         <xs:complexType>
