@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="https://www.M9J.github.io"
-    xmlns="https://www.M9J.github.io"
+    targetNamespace="http://example.com/xmldef" xmlns="http://example.com/xmldef"
     elementFormDefault="qualified">
     <xs:element name="chord-chart">
         <xs:complexType>
-            <xs:sequence>
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
                 <xs:element name="keyWhite">
                     <xs:complexType>
-                        <xs:attribute name="note" type="xs:string" use="required" />
-                        <xs:attribute name="isPressed" type="xs:string" use="optional" />
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute type="xs:string" name="note" use="required" />
+                                <xs:attribute type="xs:string" name="isPressed" use="optional" />
+                            </xs:extension>
+                        </xs:simpleContent>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="keyBlack">
                     <xs:complexType>
-                        <xs:attribute name="note" type="xs:string" use="required" />
-                        <xs:attribute name="isPressed" type="xs:string" use="optional" />
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute type="xs:string" name="note" use="required" />
+                                <xs:attribute type="xs:string" name="isPressed" use="optional" />
+                            </xs:extension>
+                        </xs:simpleContent>
                     </xs:complexType>
                 </xs:element>
-            </xs:sequence>
+            </xs:choice>
         </xs:complexType>
     </xs:element>
 </xs:schema>
