@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<chord-chart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="chord-chart.xsd" 
+>
+    <keyWhite note="C" pressed="Y" />
+    <keyBlack note="C" />
+    <keyWhite
+        note="D" />
+    <keyBlack
+        note="D" />
+    <keyWhite note="E" pressed="Y" />
+    <keyWhite note="F" />
+    <keyBlack note="F" />
+    <keyWhite
+        note="G" pressed="Y" />
+    <keyBlack note="G" />
+    <keyWhite note="A" />
+    <keyBlack note="A" />
+    <keyWhite
+        note="B" />
+</chord-chart>

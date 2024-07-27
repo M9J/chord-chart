@@ -1,0 +1,14 @@
+<chord-chart octave="3">
+    <keyWhite note="C" pressed="Y" />
+    <keyBlack note="C" />
+    <keyWhite note="D" />
+    <keyBlack note="D" pressed="Y" />
+    <keyWhite note="E" />
+    <keyWhite note="F" />
+    <keyBlack note="F" />
+    <keyWhite note="G" pressed="Y" />
+    <keyBlack note="G" />
+    <keyWhite note="A" />
+    <keyBlack note="A" />
+    <keyWhite note="B" />
+</chord-chart>

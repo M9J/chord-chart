@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="https://www.M9J.github.io"
+    xmlns="https://www.M9J.github.io"
+    elementFormDefault="qualified">
+    <xs:element name="chord-chart">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="keyWhite">
+                    <xs:complexType>
+                        <xs:attribute name="note" type="xs:string" use="required" />
+                        <xs:attribute name="isPressed" type="xs:string" use="optional" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="keyBlack">
+                    <xs:complexType>
+                        <xs:attribute name="note" type="xs:string" use="required" />
+                        <xs:attribute name="isPressed" type="xs:string" use="optional" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
