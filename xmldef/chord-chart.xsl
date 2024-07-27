@@ -5,7 +5,8 @@
     <xsl:template match="/">
         <html>
             <head>
-                <link rel="stylesheet" type="text/css" href="/xmldef/chord-chart.css" />
+                <link rel="shortcut icon" href="/chord-chart/favicon.ico" type="image/x-icon" />
+                <link rel="stylesheet" type="text/css" href="/chord-chart/xmldef/chord-chart.css" />
             </head>
             <body>
                 <xsl:apply-templates />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="/xmldef/chord-chart.xsl"?>
+<?xml-stylesheet type="text/xsl" href="/chord-chart/xmldef/chord-chart.xsl"?>
 
 <ChordChart xmlns="https://M9J.github.io/chord-chart/xmldef"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
