@@ -21,7 +21,7 @@
     </div>
     <script>
       (async () => {
-        const index = await fetch("./chord-chart/");
+        const index = await fetch("/chord-chart/");
         const dummy = document.createElement("dummy");
         dummy.innerHTML = await index.text();
         const wrapper = dummy.getElementsByTagName("ul");
