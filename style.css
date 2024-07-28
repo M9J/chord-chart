@@ -55,14 +55,12 @@ body {
 
 .preview-container {
   display: inline-table;
-  padding: 8px;
   background-color: #666;
 }
 
 #preview-window {
   display: flex;
   flex-direction: row;
-  gap: 8px;
 }
 
 .chord-list {
@@ -79,4 +77,14 @@ body {
   display: flex;
   flex-direction: column;
   overflow: auto;
+}
+
+.footer {
+  padding: 8px;
+  background-color: #000;
+  color: #fff;
+  border-top: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

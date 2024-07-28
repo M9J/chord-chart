@@ -1,6 +1,7 @@
 Chord {
   display: flex;
   flex-direction: column;
+  margin-right: 2px;
 }
 
 ChordName {
@@ -14,7 +15,7 @@ ChordName {
   border-bottom: 0px;
 }
 
-KeyBed {
+Keys {
   display: flex;
   position: relative;
   box-sizing: border-box;
