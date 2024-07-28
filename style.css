@@ -58,7 +58,7 @@ body {
   padding: 8px;
 }
 
-#preview-window {
+.preview-window {
   display: flex;
   flex-direction: row;
   gap: 8px;
