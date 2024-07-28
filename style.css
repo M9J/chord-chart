@@ -53,22 +53,6 @@ body {
   flex-direction: column;
 }
 
-li {
-  display: flex;
-  width: 100%;
-  font-weight: bolder;
-  padding: 8px 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 8px;
-}
-
-li a {
-  flex: 1;
-  display: flex;
-  text-decoration: none;
-  color: #000;
-}
-
 .preview-container {
   display: inline-table;
   padding: 8px;
