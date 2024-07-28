@@ -39,7 +39,7 @@ async function loadChordTemplates(key, chords) {
   if (!chords) throw new Error("chords not provided");
   for (let chord of chords) {
     const chordPath = `${baseURL}chord-chart/${key}/${chord}.html`;
-    if (chordPath) loadChord(chordPath, key);
+    if (chordPath) await loadChord(chordPath, key);
   }
 }
 
