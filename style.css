@@ -17,6 +17,8 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #666;
+  position: relative;
+  min-width: 0;
 }
 
 .title-bar {
@@ -47,6 +49,8 @@ body {
 .index-content {
   flex: 1;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 li {
@@ -66,17 +70,14 @@ li a {
 }
 
 .preview-container {
-  display: flex;
+  display: inline-table;
   padding: 8px;
   background-color: #666;
-  overflow: auto;
 }
 
 #preview-window {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
 }
 
@@ -88,4 +89,10 @@ li a {
 .chord-list-name {
   padding: 8px;
   font-weight: bold;
+}
+
+.chord-list-preview {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 }
