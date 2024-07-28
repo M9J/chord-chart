@@ -23,7 +23,11 @@ body {
   background-color: #000;
   color: #fff;
   padding: 8px;
+}
+
+.brand-logo {
   font-weight: 900;
+  display: inline-flex;
 }
 
 .content {
@@ -34,18 +38,14 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 75vw;
-  margin: 0 auto;
   position: relative;
   background: white;
-  border-radius: 10px;
-  overflow: hidden;
+  box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.25);
+  min-height: 0;
 }
 
 .index-content {
   flex: 1;
-  flex-basis: 75vh;
-  box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.25);
   overflow: auto;
 }
 
@@ -70,14 +70,22 @@ li a {
   padding: 8px;
   background-color: #666;
   overflow: auto;
-  min-width: 0;
 }
 
 #preview-window {
-  flex: 1;
   display: flex;
-  flex-direction: column;
-  overflow: auto;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+}
+
+.chord-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.chord-list-name {
+  padding: 8px;
+  font-weight: bold;
 }

@@ -1,8 +1,26 @@
-ChordChart {
+Chord {
+  display: flex;
+  flex-direction: column;
+}
+
+ChordName {
+  background-color: #000;
+  color: #fff;
+  width: calc(100% + 1px);
+  border: 1px solid #000;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: 900;
+}
+
+KeyBed {
   background: #333;
   display: flex;
   position: relative;
   box-sizing: border-box;
+  /* overflow: hidden; */
 }
 
 KeyWhite {
@@ -34,5 +52,5 @@ KeyBlack {
 
 KeyWhite[isPressed="Y"],
 KeyBlack[isPressed="Y"] {
-  background-color: #f00;
+  background-color: #0af;
 }

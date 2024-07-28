@@ -2,34 +2,54 @@ const baseURL = location.href;
 
 (async () => {
   const index = await import(baseURL + "chord-chart/index.js");
-  const chordsList = index.default;
-  if (chordsList.length > 0) {
-    const ul = document.createElement("ul");
-    for (let chord of chordsList) {
-      const liNode = document.createElement("li");
-      const a1 = document.createElement("a");
-      a1.onclick = () => loadChord(chord);
-      const span1 = document.createElement("span");
-      span1.innerHTML = chord;
-      a1.appendChild(span1);
-      liNode.appendChild(a1);
-      ul.appendChild(liNode);
+  const chordsIndex = index.default;
+  const hasChordsIndex = chordsIndex
+    ? Object.entries(chordsIndex).length > 0
+    : false;
+  if (hasChordsIndex) {
+    for (let [key, chords] of Object.entries(chordsIndex)) {
+      const chordScaleTemplate = await buildChordTemplates(key, chords);
+      const indexContent = document.getElementById("index-content");
+      indexContent.appendChild(chordScaleTemplate);
     }
-    loadChord(chordsList[0]);
-    const indexContent = document.getElementById("index-content");
-    indexContent.appendChild(ul);
   }
 })();
 
-async function loadChord(chordName) {
-  if (!chordName) throw new Error("chordName not provided");
-  console.log(chordName);
-  const chordPath = baseURL + "chord-chart/" + chordName + ".html";
-  const chordFile = await fetch(chordPath);
-  if (!chordFile) throw new Error("chordFile not found");
-  const chordHTML = await chordFile.text();
-  if (chordHTML) {
-    const previewWindow = document.getElementById("preview-window");
-    previewWindow.innerHTML = chordHTML;
+async function buildChordTemplates(key, chords) {
+  if (!key) throw new Error("key not provided");
+  if (!chords) throw new Error("chords not provided");
+  const chordList1 = document.createElement("div");
+  chordList1.classList.add("chord-list");
+  const chordListName1 = document.createElement("div");
+  chordListName1.classList.add("chord-list-name");
+  chordListName1.innerHTML = `${key} key`;
+  const chordListPreview1 = document.createElement("div");
+  chordListPreview1.classList.add("chord-list-preview");
+  const previewContainer1 = document.createElement("div");
+  previewContainer1.classList.add("preview-container");
+  const previewWindow1 = document.createElement("div");
+  previewWindow1.id = "preview-window";
+  const chordTemplates = await loadChordTemplates(key, chords);
+  if (chordTemplates.length > 0) {
+    previewWindow1.innerHTML = chordTemplates.join("");
+    previewContainer1.appendChild(previewWindow1);
+    chordListPreview1.appendChild(previewContainer1);
+    chordList1.appendChild(chordListName1);
+    chordList1.appendChild(chordListPreview1);
   }
+  return chordList1;
+}
+
+async function loadChordTemplates(key, chords) {
+  if (!key) throw new Error("key not provided");
+  if (!chords) throw new Error("chords not provided");
+  const chordHTMLs = [];
+  for (let chord of chords) {
+    const chordPath = `${baseURL}chord-chart/${key}/${chord}.html`;
+    const chordFile = await fetch(chordPath);
+    if (!chordFile) throw new Error("chordFile not found");
+    const chordHTML = await chordFile.text();
+    if (chordHTML) chordHTMLs.push(chordHTML);
+  }
+  return chordHTMLs;
 }
