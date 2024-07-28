@@ -16,15 +16,16 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: #666;
   position: relative;
   min-width: 0;
 }
 
 .title-bar {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   padding: 8px;
+  border-bottom: 1px solid #000;
+  z-index: 1;
 }
 
 .brand-logo {
@@ -41,8 +42,6 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  background: white;
-  box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.25);
   min-height: 0;
 }
 
@@ -55,12 +54,14 @@ body {
 
 .preview-container {
   display: inline-table;
-  background-color: #666;
+  background-color: #fff;
+  padding: 8px;
 }
 
 #preview-window {
   display: flex;
   flex-direction: row;
+  gap: 8px;
 }
 
 .chord-list {
@@ -81,8 +82,6 @@ body {
 
 .footer {
   padding: 8px;
-  background-color: #000;
-  color: #fff;
   border-top: 1px solid #333;
   display: flex;
   align-items: center;

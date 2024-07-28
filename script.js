@@ -34,7 +34,7 @@ async function buildChordTemplates(key, chords) {
     previewWindow1.innerHTML = chordTemplates.join("");
     previewContainer1.appendChild(previewWindow1);
     chordListPreview1.appendChild(previewContainer1);
-    chordList1.appendChild(chordListName1);
+    // chordList1.appendChild(chordListName1);
     chordList1.appendChild(chordListPreview1);
   }
   return chordList1;
