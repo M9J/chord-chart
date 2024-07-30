@@ -1,8 +1,8 @@
-import { ChordBuilder } from "./piano-keys-svg-builder/ChordBuilder.js";
+import { ChordBuilder } from "./piano-keys-svg-builder/ChordBuilder";
 import {
   FourKeyBuilder,
   ThreeKeyBuilder,
-} from "./piano-keys-svg-builder/KeySetBuilder.js";
+} from "./piano-keys-svg-builder/KeySetBuilder";
 
 const CHORDS_C = {
   CMajor: ChordBuilder("CMajor", [
@@ -58,7 +58,7 @@ const CHORDS_C_SHARP = {
   ]),
 };
 
-export const CHORDS = {
+export const CHORDS: any = {
   CHORDS_C,
   CHORDS_C_SHARP,
 };

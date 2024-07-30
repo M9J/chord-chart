@@ -3,11 +3,11 @@ import {
   BlackKeyBuilder,
   createSVGElement,
   WhiteKeyBuilder,
-} from "./SVGBuilder.js";
+} from "./SVGBuilder";
 
 const SVG_HEIGHT = "32";
 
-export function OneKeyBuilder(o) {
+export function OneKeyBuilder(o: any) {
   const hasExtension = o?.hasExtension || false;
   const activeKeys = o.activeKeys || [];
   const svg = createSVGElement("svg");
@@ -26,7 +26,7 @@ export function OneKeyBuilder(o) {
   return svg;
 }
 
-export function TwoKeyBuilder(o) {
+export function TwoKeyBuilder(o:any) {
   const hasExtension = o?.hasExtension || false;
   const activeKeys = o.activeKeys || [];
   const svg = createSVGElement("svg");
@@ -49,7 +49,7 @@ export function TwoKeyBuilder(o) {
   return svg;
 }
 
-export function ThreeKeyBuilder(o) {
+export function ThreeKeyBuilder(o:any) {
   const hasExtension = o?.hasExtension || false;
   const activeKeys = o.activeKeys || [];
   const svg = createSVGElement("svg");
@@ -76,7 +76,7 @@ export function ThreeKeyBuilder(o) {
   return svg;
 }
 
-export function FourKeyBuilder(o) {
+export function FourKeyBuilder(o:any) {
   const hasExtension = o?.hasExtension || false;
   const activeKeys = o.activeKeys || [];
   const svg = createSVGElement("svg");

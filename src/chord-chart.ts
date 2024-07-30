@@ -1,4 +1,4 @@
-import { CHORDS } from "./chords.js";
+import { CHORDS } from "./chords";
 
 const hasChords = Object.entries(CHORDS).length > 0 || false;
 if (hasChords) {
@@ -15,7 +15,9 @@ if (hasChords) {
       for (const chordName of Object.keys(chordsList)) {
         chordRow.appendChild(chordsList[chordName]);
       }
-      pianoChordChartContainer.appendChild(chordRow);
+      if (pianoChordChartContainer) {
+        pianoChordChartContainer.appendChild(chordRow);
+      }
     }
   }
 }

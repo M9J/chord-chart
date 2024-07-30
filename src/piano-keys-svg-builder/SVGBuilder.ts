@@ -5,7 +5,7 @@ const KEY_BLACK_ACTIVE_COLOR = COLOR_PINK;
 const KEY_WHITE_COLOR = "#fff";
 const KEY_BLACK_COLOR = "#000";
 
-export function BackgroundBuilder(o) {
+export function BackgroundBuilder(o: any) {
   const width = o?.width || "08";
   const height = o?.height || "20";
   const rect = createSVGElement("rect");
@@ -17,7 +17,7 @@ export function BackgroundBuilder(o) {
   return rect;
 }
 
-export function BlackKeyBuilder(o) {
+export function BlackKeyBuilder(o: any) {
   const x = o?.x || "00";
   const y = o?.y || "00";
   const width = o?.width || "07";
@@ -31,10 +31,10 @@ export function BlackKeyBuilder(o) {
   rect.setAttribute("height", height);
   rect.setAttribute("fill", "#000");
   const rect2 = createSVGElement("rect");
-  rect2.setAttribute("x", +x + 1);
-  rect2.setAttribute("y", +y);
-  rect2.setAttribute("width", +width - 2);
-  rect2.setAttribute("height", +height - 1);
+  rect2.setAttribute("x", (+x + 1).toString());
+  rect2.setAttribute("y", (+y).toString());
+  rect2.setAttribute("width", (+width - 2).toString());
+  rect2.setAttribute("height", (+height - 1).toString());
   rect2.setAttribute(
     "fill",
     isActive ? KEY_BLACK_ACTIVE_COLOR : KEY_BLACK_COLOR
@@ -44,7 +44,7 @@ export function BlackKeyBuilder(o) {
   return g;
 }
 
-export function WhiteKeyBuilder(o) {
+export function WhiteKeyBuilder(o: any) {
   const x = o?.x || "00";
   const y = o?.y || "00";
   const width = o?.width || "10";
@@ -62,6 +62,6 @@ export function WhiteKeyBuilder(o) {
   return rect;
 }
 
-export function createSVGElement(e) {
+export function createSVGElement(e: string) {
   return document.createElementNS("http://www.w3.org/2000/svg", e);
 }

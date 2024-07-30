@@ -3,7 +3,7 @@ import {
   OneKeyBuilder,
   ThreeKeyBuilder,
   TwoKeyBuilder,
-} from "./KeySetBuilder.js";
+} from "./KeySetBuilder";
 
 const Piano88Keys = [
   TwoKeyBuilder({ hasExtension: true }),

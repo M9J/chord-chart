@@ -1,4 +1,4 @@
-export function ChordBuilder(label, keySetArray) {
+export function ChordBuilder(label: string, keySetArray: any[]): HTMLElement {
   const chordContainer = document.createElement("div");
   const hasKeySetArray = Array.isArray(keySetArray)
     ? keySetArray.length > 0
